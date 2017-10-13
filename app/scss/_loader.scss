@@ -1,0 +1,30 @@
+.wrapper {
+  display: none;
+  border-radius: 50%;
+  position: relative;
+  margin: 40vh auto 0;
+}
+
+.shape {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $cyan;
+  transform-origin: 0;
+  animation: loadingAnimation 3s infinite ease-in-out;
+}
+
+@keyframes loadingAnimation {
+  50% {
+    border-color: $magenta;
+    border-radius: 50%;
+    transform: scale(5) rotate(270deg);
+
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    border-color: $yellow;
+  }
+}

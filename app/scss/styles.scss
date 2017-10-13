@@ -1,11 +1,47 @@
-$mobile: 320px;
-$tablet: 768px;
-$desktop: 1500px;
+@import "_variables";
+@import "_typography";
+@import "_buttons";
+@import "_loader";
 
 
-html {
-  font-size:12px;
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
   @media screen and (min-width:$tablet) {
-    font-size:16px;
+    width: 80%;
+  }
+  @media screen and (min-width:$desktop) {
+    width: 60%;
   }
 }
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  &__item {
+    overflow: auto;
+  }
+}
+
+.date {
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: $silver;
+  border-radius: 5px;
+  color: #000;
+}
+
+.content {
+  padding-left: 2rem;
+}
+
+hr {
+  margin: 1rem 0;
+  border: 2px solid black;
+}
+

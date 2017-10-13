@@ -2,15 +2,15 @@ $(function() {
 
     var loadButton = $('#loadButton');
     var postList = $('#postList');
-    $('#postList').hide();
-    // $('#loader').hide();
+    var loader = $('#loader');
+    postList.hide();
 
     loadButton.on('click', function() {
-        $('#loader').show();
-        $("#loadButton").html('Loading ...');
-        $("#loadButton").addClass('lol');
+        loader.show();
+        loadButton.html('Loading ...');
+        loadButton.addClass('buttonToBottom');
 
-        var lol = $.ajax({
+        var getData = $.ajax({
             dataType: "json",
             url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
             type: 'GET',
@@ -27,10 +27,10 @@ $(function() {
         });
 
         setTimeout(function() {
-            lol.then(function(){
-                $('#loader').hide();
-                $('#loadButton').hide();
-                $('#postList').show();
+            getData.then(function(){
+                loader.hide();
+                loadButton.hide();
+                postList.fadeIn();
             });
         }, 3000);
 
