@@ -17,11 +17,11 @@ $(function() {
             success: function(posts) {
                 $.each(posts, function(index, post) {
                     var titleHTML = '<h1 class="title">'+post.title.rendered+'</h1>';
-                    var date = moment(post.date).format('DD-MM-YYYY');
-                    var dateHTML = '<time class="date">Posted on '+date+'</time>';
+                    var date = moment(post.date).format('DD.MM.YYYY');
+                    var dateHTML = '<time class="date">'+date+'</time>';
                     var excerptHTML = '<span class="text">'+post.excerpt.rendered+'</span>';
                     var readMoreHTML = '<a href="'+post.link+'" class="link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>';
-                    postList.append('<li class="list__item">'+titleHTML+'<div class="content">'+dateHTML+excerptHTML+readMoreHTML+'</div><hr></li>');
+                    postList.append('<li class="list__item row"><div class="col-xs-12 col-md-1 col-md-push-1 text-left">'+dateHTML+'</div><div class="col-xs-12 col-md-9 col-md-push-1">'+titleHTML+'<div class="content">'+excerptHTML+readMoreHTML+'</div></div></li>');
                 })
             }
         });

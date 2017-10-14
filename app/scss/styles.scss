@@ -23,8 +23,14 @@ body {
 .list {
   list-style: none;
   padding-left: 0;
+  margin: 0;
   &__item {
     overflow: auto;
+    transition: 0.5s;
+    border-bottom: 2px solid black;
+    &:hover {
+      background-color: #eee;
+    }
   }
 }
 
@@ -34,14 +40,5 @@ body {
   background-color: $silver;
   border-radius: 5px;
   color: #000;
-}
-
-.content {
-  padding-left: 2rem;
-}
-
-hr {
-  margin: 1rem 0;
-  border: 2px solid black;
 }
 

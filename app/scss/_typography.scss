@@ -13,21 +13,23 @@ body {
 .title {
   font-size: 2rem;
   font-weight: 400;
-  margin-top: 0;
+  margin: 0;
 }
 
 .date {
+  text-align: center;
   font-size: 0.8rem;
 }
 
-.text {
+.text p{
   display: block;
-  margin: 2rem 0;
-  font-size: 1.3rem;
+  margin: 0!important;
+  font-size: 1.2rem;
 }
 
 .link {
   //display: inline-block;
+  font-size: 1.2rem;
   font-weight: 900;
   color: black!important; //overriding Bootstrap
   text-decoration: none!important; //overriding Bootstrap
