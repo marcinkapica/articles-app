@@ -5,11 +5,13 @@
   transform: translate(-50%, 50%);
   width: 15rem;
   transition: 1s ease-in-out;
+  font-weight: 600;
+  border: 2px solid #19d68d;
 }
 
 .buttonToBottom {
   bottom: 10%;
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $notebook) {
     bottom: 40%;
   }
 }

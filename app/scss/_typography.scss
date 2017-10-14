@@ -12,29 +12,40 @@ body {
 
 .title {
   font-size: 2rem;
-  font-weight: 400;
   margin: 0;
+  color: #1879BF;
+  font-weight: 700;
+  @media screen and (min-width:$notebook) {
+    margin-top: 1rem;
+  }
 }
 
 .date {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  color: #8a8a8a;
+  margin: 1rem 0 0 30px;
+  @media screen and (min-width:$notebook) {
+    margin-left: 0;
+  }
 }
 
 .text p{
   display: block;
-  margin: 0!important;
   font-size: 1.2rem;
+  color: black;
+  margin: 1rem 0 0;
 }
 
 .link {
-  //display: inline-block;
+  display: inline-block;
   font-size: 1.2rem;
-  font-weight: 900;
+  font-weight: 700;
   color: black!important; //overriding Bootstrap
   text-decoration: none!important; //overriding Bootstrap
-  border-bottom: 2px solid black;
+  border-bottom: 4px solid rgba(0,0,0,0);
+  margin-top: 1rem;
   &:hover {
-    border-width:4px;
+    border-color: #1879BF;
   }
 }
