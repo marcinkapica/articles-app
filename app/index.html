@@ -31,9 +31,31 @@
     <ul class="list container-fluid" id="postList">
     </ul>
 
+    <script id="listTemplate" type="text/template">
+        {{#each posts}}
+        <li class="list__item row">
+            <div class="col-xs-12 col-md-2">
+                <div class="dateContainer">
+                    <time class="date">{{#foo date}}{{/foo}}</time>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                <div class="content">
+                    <h1 class="title">{{{title.rendered}}}</h1>
+                    <span class="text">{{{excerpt.rendered}}}</span>
+                    <a href="{{link}}" class="link">
+                        Read more <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+
     <!--build:js js/main.min.js -->
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/vendor/moment.min.js"></script>
+    <script src="js/vendor/handlebars-v4.0.10.js"></script>
     <script src="js/main.js"></script>
     <!-- endbuild -->
 </body>
