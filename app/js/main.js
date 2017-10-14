@@ -5,7 +5,7 @@ $(function() {
     var loader = $('#loader');
     postList.hide();
 
-    Handlebars.registerHelper('foo', function(date) {
+    Handlebars.registerHelper('parseDate', function(date) {
         return  moment(date).format('DD.MM.YYYY');
     });
 
