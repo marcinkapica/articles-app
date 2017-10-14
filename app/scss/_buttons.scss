@@ -8,7 +8,11 @@
   font-weight: 600;
   border: 3px solid #19d68d;
   border-radius: 4rem;
+  background-color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
   &:hover, &:focus, &:active {
+    outline: none;
     color: white;
     background-color:  #19d68d;
     border-color: #19d68d;
