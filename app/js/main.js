@@ -19,11 +19,8 @@ $(function() {
             url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
             type: 'GET',
             success: function(data) {
-                var template = Handlebars.compile($('#listTemplate').html());
-                var dataObject = {
-                    "posts": data
-                };
-                postList.html(template(dataObject));
+                var template = Handlebars.compile($('#listItemTemplate').html());
+                postList.html(template(data));
             }
         });
 
@@ -34,7 +31,6 @@ $(function() {
                 postList.fadeIn();
             });
         }, 3000);
-
     });
 
 });

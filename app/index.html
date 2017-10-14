@@ -22,17 +22,15 @@
             <div class="shape" style="animation-delay:0.2s"></div>
             <div class="shape" style="animation-delay:0.3s"></div>
             <div class="shape" style="animation-delay:0.4s"></div>
-
         </div>
-
         <button id="loadButton" class="button">Load the posts</button>
     </div>
 
     <ul class="list container-fluid" id="postList">
     </ul>
 
-    <script id="listTemplate" type="text/template">
-        {{#each posts}}
+    <script id="listItemTemplate" type="text/template">
+        {{#each this}}
         <li class="list__item row">
             <div class="col-xs-12 col-md-2">
                 <div class="dateContainer">

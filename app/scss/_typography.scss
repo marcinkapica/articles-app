@@ -13,7 +13,7 @@ body {
 .title {
   font-size: 2rem;
   margin: 0;
-  color: #1879BF;
+  color: $denim;
   font-weight: 700;
   @media screen and (min-width:$notebook) {
     margin-top: 1rem;
@@ -21,9 +21,8 @@ body {
 }
 
 .date {
-  text-align: center;
   font-size: 1rem;
-  color: #8a8a8a;
+  color: $gray;
   margin: 1rem 0 0 30px;
   @media screen and (min-width:$notebook) {
     margin-left: 0;
@@ -33,7 +32,7 @@ body {
 .text p{
   display: block;
   font-size: 1.2rem;
-  color: black;
+  color: #000;
   margin: 1rem 0 0;
 }
 
@@ -43,9 +42,9 @@ body {
   font-weight: 700;
   color: black!important; //overriding Bootstrap
   text-decoration: none!important; //overriding Bootstrap
-  border-bottom: 4px solid rgba(0,0,0,0);
+  border-bottom: 4px solid transparent;
   margin-top: 1rem;
   &:hover {
-    border-color: #1879BF;
+    border-color: $denim;
   }
 }
