@@ -6,7 +6,7 @@
   width: 15rem;
   transition: 0.5s ease-in-out;
   font-weight: 600;
-  border: 3px solid $mountain-meadow;
+  border: 3px solid $denim;
   border-radius: 4rem;
   background-color: #fff;
   padding: 1rem;
@@ -14,8 +14,8 @@
   &:hover, &:focus, &:active {
     outline: none;
     color: #fff;
-    background-color:  $mountain-meadow;
-    border-color: $mountain-meadow;
+    background-color:  $denim;
+    border-color: $denim;
   }
 }
 
