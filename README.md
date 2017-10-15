@@ -17,12 +17,12 @@ W celu uruchomienia aplikacji należy w pierwszym kroku zainstalować wymagane p
 
 ### 2. Uruchomienia wersji developerskiej
 Po instalacji paczek w celu uruchomienia aplikacji w wersji developerskiej należy użyć komendy:
-###`gulp`
+####`gulp`
 Zostanie wtedy uruchomiony lokalny serwer i otworzy się okno przeglądarki z wyświetloną aplikacją. Pliki aplikacji w wersji developerskiej znajdują się w folderze `app`
 
 ### 3. Utworzenie plików wersji produkcyjnej
 Aby wygenerować pliki w wersji produkcyjnej należy użyć komendy
-###`gulp build`
+####`gulp build`
 Spowoduje to usunięcie zawartości folderu `dist` i utworzenie w tym miejscu plików aplikacji w wersji produkcyjnej (zminifikowane i skonkatenowane style oraz skrypty)
 
 ## Użyte narzędzia, biblioteki i frameworki ###
