@@ -9,14 +9,29 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^7.1.5",
     "browser-sync": "^2.18.13",
+    "cssnano": "^4.0.0-rc.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^3.4.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.2",
     "run-sequence": "^2.2.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "ie >= 10",
+    "ie_mob >= 10",
+    "ff >= 30",
+    "chrome >= 34",
+    "safari >= 10",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ]
 }
