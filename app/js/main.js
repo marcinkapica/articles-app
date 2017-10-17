@@ -1,3 +1,4 @@
+'use strict';
 $(function() {
 
     var loadButton = $('#loadButton');
@@ -15,7 +16,7 @@ $(function() {
         loadButton.addClass('buttonToBottom');
 
         var getData = $.ajax({
-            dataType: "json",
+            dataType: 'json',
             url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
             type: 'GET',
             success: function(data) {
@@ -25,7 +26,7 @@ $(function() {
         });
 
         setTimeout(function() {
-            getData.then(function(){
+            getData.then(function() {
                 loader.hide();
                 loadButton.hide();
                 postList.fadeIn();
