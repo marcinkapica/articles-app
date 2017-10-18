@@ -26,10 +26,16 @@
         <div class="loader__shape" style="animation-delay:0.4s"></div>
     </div>
 
+    <div class="error-info" id="error-info"></div>
+
     <button class="button" id="button">Load the posts</button>
 
-    <ul class="list container-fluid" id="list">
-    </ul>
+    <ul class="list container-fluid" id="list"></ul>
+
+    <script id="error-template" type="text/template">
+        <p class="error-info__status"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error {{number}} - {{text}}</p>
+        <p class="error-info__instruction">Click the button to try again</p>
+    </script>
 
     <script id="list-item-template" type="text/template">
         {{#each this}}
