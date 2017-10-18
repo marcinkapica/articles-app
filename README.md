@@ -2,13 +2,13 @@
 
 Web application which downloads posts data from Future Processing blog using REST API and displays the posts in the styled list.
 
-## Author information ###
+## Author information
 
 Marcin Kapica
 
 marcinkapica@outlook.com
 
-## Installation and launching ###
+## Installation and launching
 
 ### 1. Installing npm packages
 
