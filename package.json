@@ -13,6 +13,7 @@
     "browser-sync": "^2.18.13",
     "cssnano": "^4.0.0-rc.2",
     "del": "^3.0.0",
+    "eslint-config-airbnb": "^16.1.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^4.0.0",
     "gulp-imagemin": "^3.4.0",

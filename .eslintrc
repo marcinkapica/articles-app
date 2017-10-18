@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb/legacy",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "jquery": true
+  },
+  "globals": {
+    "moment": true,
+    "Handlebars": true
+  },
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "space-before-function-paren": ["error", "never"],
+    "func-names": ["error", "never"]
+  }
+}

@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var eslint = require('gulp-eslint');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
@@ -10,7 +11,13 @@ var cssnano = require('cssnano');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
 var runSequence = require('run-sequence');
-var eslint = require('gulp-eslint');
+
+gulp.task('lint', function () {
+  return gulp.src(['app/**/*.js', '!app/js/vendor/**/*'])
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
+});
 
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss')
@@ -29,17 +36,11 @@ gulp.task('browserSync', function() {
   })
 });
 
-gulp.task('watch', ['browserSync', 'sass'], function() {
-  gulp.watch('app/scss/**/*.scss',['sass']);
+gulp.task('watch', ['browserSync', 'sass', 'lint'], function() {
+  gulp.watch(['app/**/*.js', '!app/js/vendor/**/*'], ['lint']);
+  gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
-});
-
-gulp.task('lint', function () {
-    gulp.src(['app/**/main.js','!vendor/**'])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
 });
 
 gulp.task('useref', function() {
