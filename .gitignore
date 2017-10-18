@@ -1,4 +1,4 @@
 .idea/
 node_modules/
 dist/
-app/css/styles.css
+app/css/main.css
