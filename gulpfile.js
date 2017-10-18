@@ -9,6 +9,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var imagemin = require('gulp-imagemin');
+var cleanhtml = require('gulp-cleanhtml');
 var del = require('del');
 var runSequence = require('run-sequence');
 
@@ -48,6 +49,7 @@ gulp.task('useref', function() {
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', postcss([autoprefixer(), cssnano()]) ))
+    .pipe(cleanhtml())
     .pipe(gulp.dest('dist'))
 });
 
