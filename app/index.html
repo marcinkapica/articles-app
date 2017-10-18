@@ -6,42 +6,40 @@
     <title>Load posts app</title>
     <meta name="description" content="Small web application which loads the blog posts data and displays it on the list">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!--build:css css/styles.min.css-->
+    <!--build:css css/main.min.css-->
     <link rel="stylesheet" type="text/css" href="css/vendor/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--endbuild-->
 </head>
 <body>
-    <div id="loadContent">
-        <div id="loader" class="wrapper">
-            <div class="shape"></div>
-            <div class="shape" style="animation-delay:0.1s"></div>
-            <div class="shape" style="animation-delay:0.2s"></div>
-            <div class="shape" style="animation-delay:0.3s"></div>
-            <div class="shape" style="animation-delay:0.4s"></div>
-        </div>
-        <button id="loadButton" class="button">Load the posts</button>
+    <div class="loader" id="loader">
+        <div class="loader__shape"></div>
+        <div class="loader__shape" style="animation-delay:0.1s"></div>
+        <div class="loader__shape" style="animation-delay:0.2s"></div>
+        <div class="loader__shape" style="animation-delay:0.3s"></div>
+        <div class="loader__shape" style="animation-delay:0.4s"></div>
     </div>
+    <button class="button" id="button">Load the posts</button>
 
-    <ul class="list container-fluid" id="postList">
+    <ul class="list container-fluid" id="list">
     </ul>
 
-    <script id="listItemTemplate" type="text/template">
+    <script id="list-item-template" type="text/template">
         {{#each this}}
         <li class="list__item row">
             <div class="col-xs-12 col-md-2">
-                <div class="dateContainer">
-                    <time class="date">{{#parseDate date}}{{/parseDate}}</time>
+                <div class="list__date-container">
+                    <time class="list__date">{{#parseDate date}}{{/parseDate}}</time>
                 </div>
             </div>
             <div class="col-xs-12 col-md-10">
-                <div class="content">
-                    <h1 class="title"><a href="{{link}}">{{{title.rendered}}}</a></h1>
-                    <span class="text">{{{excerpt.rendered}}}</span>
-                    <a href="{{link}}" class="link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <div class="list__content-container">
+                    <h1 class="list__title"><a href="{{link}}">{{{title.rendered}}}</a></h1>
+                    <span class="list__excerpt">{{{excerpt.rendered}}}</span>
+                    <a href="{{link}}" class="list__link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </li>

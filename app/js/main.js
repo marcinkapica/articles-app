@@ -1,35 +1,35 @@
 'use strict';
 
 $(document).ready(function() {
-  var loadButton = $('#loadButton');
-  var postList = $('#postList');
+  var button = $('#button');
+  var list = $('#list');
   var loader = $('#loader');
-  postList.hide();
+  list.hide();
 
   Handlebars.registerHelper('parseDate', function(date) {
     return moment(date).format('DD.MM.YYYY');
   });
 
-  loadButton.on('click', function() {
+  button.on('click', function() {
     var getData = $.ajax({
       dataType: 'json',
       url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
       type: 'GET',
       success: function(data) {
-        var template = Handlebars.compile($('#listItemTemplate').html());
-        postList.html(template(data));
+        var template = Handlebars.compile($('#list-item-template').html());
+        list.html(template(data));
       }
     });
 
     loader.show();
-    loadButton.html('Loading ...');
-    loadButton.addClass('buttonToBottom');
+    button.html('Loading ...');
+    button.addClass('button-downward');
 
     setTimeout(function() {
       getData.then(function() {
         loader.hide();
-        loadButton.hide();
-        postList.fadeIn();
+        button.hide();
+        list.fadeIn();
       });
     }, 3000);
   });

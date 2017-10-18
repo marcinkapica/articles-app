@@ -1,7 +1,7 @@
 .button {
   position: absolute;
-  bottom: 50%;
   left: 50%;
+  bottom: 50%;
   transform: translate(-50%, 50%);
   width: 15rem;
   transition: 0.5s ease-in-out;
@@ -11,7 +11,10 @@
   background-color: #fff;
   padding: 1rem;
   font-size: 1.2rem;
-  &:hover, &:focus, &:active {
+
+  &:hover,
+  &:focus,
+  &:active {
     outline: none;
     color: #fff;
     background-color:  $denim;
@@ -19,8 +22,9 @@
   }
 }
 
-.buttonToBottom {
+.button-downward {
   bottom: 10%;
+
   @media screen and (min-width: $notebook) {
     bottom: 40%;
   }
