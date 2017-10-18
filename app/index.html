@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
     <title>Load posts app</title>
     <meta name="description" content="Small web application which loads the blog posts data and displays it on the list">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <!--build:css css/main.min.css-->
     <link rel="stylesheet" type="text/css" href="css/vendor/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
@@ -14,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--endbuild-->
 </head>
+
 <body>
     <div class="loader" id="loader">
         <div class="loader__shape"></div>
@@ -22,6 +25,7 @@
         <div class="loader__shape" style="animation-delay:0.3s"></div>
         <div class="loader__shape" style="animation-delay:0.4s"></div>
     </div>
+
     <button class="button" id="button">Load the posts</button>
 
     <ul class="list container-fluid" id="list">
@@ -53,4 +57,5 @@
     <script src="js/main.js"></script>
     <!-- endbuild -->
 </body>
+
 </html>
