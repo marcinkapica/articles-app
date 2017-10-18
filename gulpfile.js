@@ -66,13 +66,13 @@ gulp.task('clean:dist', function() {
   return del.sync('dist');
 });
 
-gulp.task('build', function (callback) {
+gulp.task('build', function(callback) {
   runSequence('clean:dist',['sass', 'useref', 'images', 'fonts'],
    callback
  )
 });
 
-gulp.task('default', function (callback) {
+gulp.task('default', function(callback) {
   runSequence(['lint','sass','browserSync', 'watch'],
     callback
   )

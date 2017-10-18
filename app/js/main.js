@@ -5,6 +5,11 @@ $(document).ready(function() {
   var list = $('#list');
   var loader = $('#loader');
   var errorInfo = $('#error-info');
+  var getData = $.ajax({
+    dataType: 'json',
+    url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
+    type: 'GET'
+  });
 
   function showLoader() {
     loader.show();
@@ -42,14 +47,7 @@ $(document).ready(function() {
   errorInfo.hide();
 
   button.on('click', function() {
-    var getData = $.ajax({
-      dataType: 'json',
-      url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
-      type: 'GET'
-    });
-
     showLoader();
-
     setTimeout(function() {
       getData.done(function(data) {
         showList(data);

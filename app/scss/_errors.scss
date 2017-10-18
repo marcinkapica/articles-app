@@ -1,19 +1,19 @@
 .error-info {
-  display: none;
   position: absolute;
   top: 0;
+  display: none;
   width: 100%;
   margin: 0 auto;
+  padding: 1rem;
   background-color: #ff4e3a;
   color: #fff;
   text-align: center;
-  padding: 1rem;
   &__status {
     font-size: 1.25rem;
   }
 
   &__instruction {
-    font-size: 1rem;
     margin: 0;
+    font-size: 1rem;
   }
 }
