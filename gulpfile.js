@@ -64,12 +64,17 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('favicon', function() {
+  return gulp.src('app/favicon.ico')
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('clean:dist', function() {
   return del.sync('dist');
 });
 
 gulp.task('build', function(callback) {
-  runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'], callback);
+  runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts', 'favicon'], callback);
 });
 
 gulp.task('default', function(callback) {
