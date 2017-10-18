@@ -4,15 +4,6 @@ $(document).ready(function() {
   var button = $('#button');
   var list = $('#list');
   var loader = $('#loader');
-  var getData = $.ajax({
-    dataType: 'json',
-    url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
-    type: 'GET',
-    success: function(data) {
-      var template = Handlebars.compile($('#list-item-template').html());
-      list.html(template(data));
-    }
-  });
 
   function showLoader() {
     loader.show();
@@ -20,10 +11,18 @@ $(document).ready(function() {
     button.addClass('button-downward');
   }
 
-  function showList() {
+  function showError(xhr) {
+    loader.hide();
+    button.html(xhr.statusText);
+    button.removeClass('button-downward');
+  }
+
+  function showList(data) {
+    var template = Handlebars.compile($('#list-item-template').html());
     loader.hide();
     button.hide();
     list.fadeIn();
+    list.html(template(data));
   }
 
   Handlebars.registerHelper('parseDate', function(date) {
@@ -33,11 +32,19 @@ $(document).ready(function() {
   list.hide();
 
   button.on('click', function() {
+    var getData = $.ajax({
+      dataType: 'json',
+      url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/pofsts',
+      type: 'GET'
+    });
     showLoader();
 
     setTimeout(function() {
-      getData.then(function() {
-        showList();
+      getData.done(function(data) {
+        showList(data);
+      }).fail(function(jqXHR) {
+        showError(jqXHR);
+        // console.log('Request Status: ' + jqXHR.status + ' Status Text: ' + jqXHR.statusText);
       });
     }, 3000);
   });
