@@ -1,4 +1,5 @@
 .list {
+  display: none;
   list-style: none;
   margin: 0;
   border-style: solid;
@@ -67,7 +68,7 @@
     display: inline-block;
     font-size: 1.2rem;
     font-weight: 700;
-    color: black!important; //overriding Bootstrap
+    color: #000!important; //overriding Bootstrap
     border-bottom: 4px solid transparent;
     margin-top: 1rem;
 

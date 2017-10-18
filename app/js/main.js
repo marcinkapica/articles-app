@@ -16,6 +16,7 @@ $(document).ready(function() {
   function showError(xhr) {
     var errorTemplate = Handlebars.compile($('#error-template').html());
     var context = { number: xhr.status, text: xhr.statusText };
+
     errorInfo.html(errorTemplate(context));
     loader.hide();
     errorInfo.fadeIn();
@@ -25,10 +26,12 @@ $(document).ready(function() {
 
   function showList(data) {
     var itemTemplate = Handlebars.compile($('#list-item-template').html());
+
+    errorInfo.hide();
     loader.hide();
     button.hide();
-    list.fadeIn();
     list.html(itemTemplate(data));
+    list.fadeIn();
   }
 
   Handlebars.registerHelper('parseDate', function(date) {
@@ -44,6 +47,7 @@ $(document).ready(function() {
       url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
       type: 'GET'
     });
+
     showLoader();
 
     setTimeout(function() {
