@@ -5,6 +5,7 @@ $(document).ready(function() {
   var list = $('#list');
   var loader = $('#loader');
   var errorInfo = $('#error-info');
+  var loadingTime = 3000;
   var getData = $.ajax({
     dataType: 'json',
     url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
@@ -54,7 +55,7 @@ $(document).ready(function() {
       }).fail(function(jqXHR) {
         showError(jqXHR);
       });
-    }, 3000);
+    }, loadingTime);
   });
 });
 

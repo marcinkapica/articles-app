@@ -13,8 +13,8 @@ var cleanhtml = require('gulp-cleanhtml');
 var del = require('del');
 var runSequence = require('run-sequence');
 
-gulp.task('lint', function () {
-  return gulp.src(['app/**/*.js', '!app/js/vendor/**/*'])
+gulp.task('lint', function() {
+  return gulp.src(['app/**/*.js', '!app/js/vendor/**/*', 'gulpfile.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
@@ -26,7 +26,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
-    }))
+    }));
 });
 
 gulp.task('browserSync', function() {
@@ -34,11 +34,11 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'app'
     }
-  })
+  });
 });
 
 gulp.task('watch', ['browserSync', 'sass', 'lint'], function() {
-  gulp.watch(['app/**/*.js', '!app/js/vendor/**/*'], ['lint']);
+  gulp.watch(['app/**/*.js', '!app/js/vendor/**/*', 'gulpfile.js'], ['lint']);
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
@@ -48,20 +48,20 @@ gulp.task('useref', function() {
   return gulp.src('app/*.html')
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', postcss([autoprefixer(), cssnano()]) ))
+    .pipe(gulpIf('*.css', postcss([autoprefixer(), cssnano()])))
     .pipe(cleanhtml())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function() {
-   return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
-   .pipe(imagemin())
-   .pipe(gulp.dest('dist/images'))
+  return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('clean:dist', function() {
@@ -69,14 +69,10 @@ gulp.task('clean:dist', function() {
 });
 
 gulp.task('build', function(callback) {
-  runSequence('clean:dist',['sass', 'useref', 'images', 'fonts'],
-   callback
- )
+  runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'], callback);
 });
 
 gulp.task('default', function(callback) {
-  runSequence(['lint','sass','browserSync', 'watch'],
-    callback
-  )
+  runSequence(['lint', 'sass', 'browserSync', 'watch'], callback);
 });
 
