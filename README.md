@@ -1,31 +1,36 @@
 # README #
 
-Aplikacja pobierająca dane postów z bloga Future Processing poprzez REST API i wyświetlająca je w formie ostylowanej listy. Aplikacja utworzona w ramach zadania rekrutacyjnego firmy Future Processing.
+Web application which downloads posts data from Future Processing blog using REST API and displays the posts in the styled list.
 
-## Dane realizującego zadanie ###
+## Author information ###
 
 Marcin Kapica
 
 marcinkapica@outlook.com
 
-## Instalacja i uruchamianie ###
+## Installation and launching ###
 
-### 1. Instalacja paczek npm
+### 1. Installing npm packages
 
-W celu uruchomienia aplikacji należy w pierwszym kroku zainstalować wymagane paczki npm. Aby to zrobić należy w konsoli wpisać komendę:
-####`npm install`
+In order to launch the app, firstly you need to install the required npm packages. It can be done by the command:
+ 
+`npm install`
 
-### 2. Uruchomienia wersji developerskiej
-Po instalacji paczek w celu uruchomienia aplikacji w wersji developerskiej należy użyć komendy:
-####`gulp`
-Zostanie wtedy uruchomiony lokalny serwer i otworzy się okno przeglądarki z wyświetloną aplikacją. Pliki aplikacji w wersji developerskiej znajdują się w folderze `app`
+### 2. Launching the app in developer environment
+To launch the app in development environment you need to use the command: 
 
-### 3. Utworzenie plików wersji produkcyjnej
-Aby wygenerować pliki w wersji produkcyjnej należy użyć komendy
-####`gulp build`
-Spowoduje to usunięcie zawartości folderu `dist` i utworzenie w tym miejscu plików aplikacji w wersji produkcyjnej (zminifikowane i skonkatenowane style oraz skrypty)
+`npm start`
+ 
+ The app hosted on localhost will be displayed in the browser window. Development files are stored in the `app` folder.
 
-## Użyte narzędzia, biblioteki i frameworki ###
+### 3. Generating production build
+In order to generate app files for production build you need to use command:
+
+`npm run build`
+ 
+This will cause deletion of all contents of the `dist` folder and will generate in this location minified and concatenated app files ready to be deployed.
+
+## Used tools, libraries and frameworks
 - [gulp](https://gulpjs.com/)
 - [Normalize.css](https://necolas.github.io/normalize.css/)
 - [Bootstrap](https://getbootstrap.com/docs/3.3/)
