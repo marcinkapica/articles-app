@@ -35,7 +35,7 @@ This will cause deletion of all contents of the `dist` folder and will generate 
 - [Normalize.css](https://necolas.github.io/normalize.css/)
 - [Bootstrap](https://getbootstrap.com/docs/3.3/)
 - [Font Awesome](http://fontawesome.io/)
-- [Font Lato z Google Fonts](https://fonts.google.com/specimen/Lato)
+- [Font Lato via Google Fonts](https://fonts.google.com/specimen/Lato)
 - [SCSS](http://sass-lang.com/)
 - [jQuery](https://jquery.com/)
 - [Handlebars](http://handlebarsjs.com/)
