@@ -6,11 +6,13 @@ $(document).ready(function() {
   var loader = $('#loader');
   var errorInfo = $('#error-info');
   var loadingTime = 3000;
-  var getData = $.ajax({
-    dataType: 'json',
-    url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
-    type: 'GET'
-  });
+  var getData = function() {
+    return $.ajax({
+      dataType: 'json',
+      url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
+      type: 'GET'
+    });
+  };
 
   function showLoader() {
     loader.show();
@@ -50,7 +52,7 @@ $(document).ready(function() {
   button.on('click', function() {
     showLoader();
     setTimeout(function() {
-      getData.done(function(data) {
+      getData().done(function(data) {
         showList(data);
       }).fail(function(jqXHR) {
         showError(jqXHR);
