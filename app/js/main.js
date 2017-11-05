@@ -43,8 +43,8 @@ $(document).ready(function() {
     loader.hide();
     button.hide();
     articlesWrapper.html(articlesTemplate(data));
-    articlesWrapper.fadeIn();
     header.fadeIn();
+    articlesWrapper.fadeIn();
     footer.fadeIn();
   }
 

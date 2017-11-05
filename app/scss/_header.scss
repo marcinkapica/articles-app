@@ -1,11 +1,14 @@
 .header {
-  display: block;
+  display: none;
   padding: 1rem 0;
-  margin: 0;
-  font-size: 2.2rem;
-  text-align: center;
-  color: $gray;
   background-color: $gallery;
+
+  &__text {
+    margin: 0;
+    font-size: 2.2rem;
+    text-align: center;
+    color: $gray;
+  }
 
   &__link {
     color: inherit;
