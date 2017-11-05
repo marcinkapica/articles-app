@@ -9,7 +9,7 @@ $(document).ready(function() {
   var getData = function() {
     return $.ajax({
       dataType: 'json',
-      url: 'https://www.future-processing.pl/blog/wp-json/wp/v2/posts',
+      url: 'https://newsapi.org/v1/articles?source=national-geographic&sortBy=top&apiKey=d237d9ccd0744ebba3291d6104da926f',
       type: 'GET'
     });
   };
@@ -60,4 +60,3 @@ $(document).ready(function() {
     }, loadingTime);
   });
 });
-

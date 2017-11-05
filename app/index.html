@@ -38,18 +38,18 @@
     </script>
 
     <script id="list-item-template" type="text/template">
-        {{#each this}}
+        {{#each this.articles}}
         <li class="list__item row">
             <div class="col-xs-12 col-md-2">
                 <div class="list__date-container">
-                    <time class="list__date">{{#parseDate date}}{{/parseDate}}</time>
+                    <time class="list__date">{{#parseDate publishedAt}}{{/parseDate}}</time>
                 </div>
             </div>
             <div class="col-xs-12 col-md-10">
                 <div class="list__content-container">
-                    <h1 class="list__title"><a href="{{link}}">{{{title.rendered}}}</a></h1>
-                    <span class="list__excerpt">{{{excerpt.rendered}}}</span>
-                    <a href="{{link}}" class="list__link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <h1 class="list__title"><a href="{{url}}">{{{title}}}</a></h1>
+                    <p class="list__excerpt">{{{description}}}</p>
+                    <a href="{{url}}" class="list__link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </li>
