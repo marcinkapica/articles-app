@@ -1,0 +1,17 @@
+.header {
+  display: block;
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 2.2rem;
+  text-align: center;
+  color: $gray;
+  background-color: $gallery;
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: darken($gray, 20%);
+    }
+  }
+}

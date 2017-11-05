@@ -5,7 +5,9 @@ $(document).ready(function() {
   var articlesWrapper = $('#articles-wrapper');
   var loader = $('#loader');
   var errorInfo = $('#error-info');
-  var loadingTime = 3000;
+  var header = $('#header');
+  var footer = $('#footer');
+  var loadingTime = 2500;
   var getData = function() {
     return $.ajax({
       dataType: 'json',
@@ -17,6 +19,8 @@ $(document).ready(function() {
   function showLoader() {
     loader.show();
     errorInfo.hide();
+    header.hide();
+    footer.hide();
     button.html('Loading ...');
     button.addClass('button-downward');
   }
@@ -40,12 +44,16 @@ $(document).ready(function() {
     button.hide();
     articlesWrapper.html(articlesTemplate(data));
     articlesWrapper.fadeIn();
+    header.fadeIn();
+    footer.fadeIn();
   }
 
   Handlebars.registerHelper('parseDate', function(date) {
     return moment(date).format('DD.MM.YYYY');
   });
 
+  header.hide();
+  footer.hide();
   articlesWrapper.hide();
   errorInfo.hide();
 

@@ -29,7 +29,15 @@
 
     <button class="button" id="button">Load the articles</button>
 
-    <div class="articles-wrapper" id="articles-wrapper"></div>
+    <header id="header">
+        <h1 class="header">Latest articles from <a class="header__link" href="https://www.nationalgeographic.com/">National Geographic</a> website</h1>
+    </header>
+
+    <main class="articles-wrapper" id="articles-wrapper"></main>
+
+    <footer class="footer" id="footer">
+        <p class="footer__text">Powered by <a href="https://newsapi.org/" class="footer__link">NewsAPI.org</a></p>
+    </footer>
 
     <script id="error-template" type="text/template">
         <p class="error-info__status"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error {{number}} - {{text}}</p>
@@ -37,20 +45,16 @@
     </script>
 
     <script id="articles-template" type="text/template">
-      <h1 class="heading">Latest articles from <a class="heading__link" href="https://www.nationalgeographic.com/">National Geographic</a> website</h1>
         {{#each this.articles}}
-        <article class="article">
-            <time class="article__date">{{#parseDate publishedAt}}{{/parseDate}}</time>
-            <div class="article__content-container">
-                <h1 class="article__title"><a class="article__link article__link--title" href="{{url}}">{{{title}}}</a></h1>
-                <p class="article__excerpt">{{{description}}}</p>
-                <a href="{{url}}" class="article__link article__link--more">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            </div>
-        </article>
+            <article class="article">
+                <time class="article__date">{{#parseDate publishedAt}}{{/parseDate}}</time>
+                <div class="article__content-container">
+                    <h1 class="article__title"><a class="article__link article__link--title" href="{{url}}">{{{title}}}</a></h1>
+                    <p class="article__excerpt">{{{description}}}</p>
+                    <a href="{{url}}" class="article__link article__link--more">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
         {{/each}}
-        <footer class="footer">
-          <p class="footer__text">Powered by <a href="https://newsapi.org/" class="footer__link">NewsAPI.org</a></p>
-        </footer>
     </script>
 
     <!--build:js js/main.min.js -->

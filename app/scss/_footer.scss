@@ -1,13 +1,16 @@
 .footer {
+  background-color: $gallery;
+  padding: 1rem;
   &__text {
     text-align: center;
-    color: $denim;
+    color: $gray;
+    margin: 0;
   }
   &__link {
     text-decoration: none;
     color: inherit;
     &:hover {
-      text-decoration: underline;
+      color: darken($gray, 20%);
     }
   }
 }
