@@ -12,6 +12,18 @@
     height: 30px;
     border: 1px solid $cyan;
     animation: loading-animation 3s infinite ease-in-out;
+    $var: 0.1;
+
+    @for $i from 2 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$var}s;
+        $var: $var + 0.1;
+      }
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
   }
 }
 

@@ -4,13 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
-    <title>Load posts app</title>
-    <meta name="description" content="Small web application which loads the blog posts data and displays it on the list">
+    <title>Load articles app</title>
+    <meta name="description" content="Small web application which loads and displays the National Geographic website articles using NewsAPI">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!--build:css css/main.min.css-->
     <link rel="stylesheet" type="text/css" href="css/vendor/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -20,40 +19,38 @@
 <body>
     <div class="loader" id="loader">
         <div class="loader__shape"></div>
-        <div class="loader__shape" style="animation-delay:0.1s"></div>
-        <div class="loader__shape" style="animation-delay:0.2s"></div>
-        <div class="loader__shape" style="animation-delay:0.3s"></div>
-        <div class="loader__shape" style="animation-delay:0.4s"></div>
+        <div class="loader__shape"></div>
+        <div class="loader__shape"></div>
+        <div class="loader__shape"></div>
+        <div class="loader__shape"></div>
     </div>
 
     <div class="error-info" id="error-info"></div>
 
-    <button class="button" id="button">Load the posts</button>
+    <button class="button" id="button">Load the articles</button>
 
-    <ul class="list container-fluid" id="list"></ul>
+    <div class="articles-wrapper" id="articles-wrapper"></div>
 
     <script id="error-template" type="text/template">
         <p class="error-info__status"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error {{number}} - {{text}}</p>
         <p class="error-info__instruction">Click the button to try again</p>
     </script>
 
-    <script id="list-item-template" type="text/template">
+    <script id="articles-template" type="text/template">
+      <h1 class="heading">Latest articles from <a class="heading__link" href="https://www.nationalgeographic.com/">National Geographic</a> website</h1>
         {{#each this.articles}}
-        <li class="list__item row">
-            <div class="col-xs-12 col-md-2">
-                <div class="list__date-container">
-                    <time class="list__date">{{#parseDate publishedAt}}{{/parseDate}}</time>
-                </div>
+        <article class="article">
+            <time class="article__date">{{#parseDate publishedAt}}{{/parseDate}}</time>
+            <div class="article__content-container">
+                <h1 class="article__title"><a class="article__link article__link--title" href="{{url}}">{{{title}}}</a></h1>
+                <p class="article__excerpt">{{{description}}}</p>
+                <a href="{{url}}" class="article__link article__link--more">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
-            <div class="col-xs-12 col-md-10">
-                <div class="list__content-container">
-                    <h1 class="list__title"><a href="{{url}}">{{{title}}}</a></h1>
-                    <p class="list__excerpt">{{{description}}}</p>
-                    <a href="{{url}}" class="list__link">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </li>
+        </article>
         {{/each}}
+        <footer class="footer">
+          <p class="footer__text">Powered by <a href="https://newsapi.org/" class="footer__link">NewsAPI.org</a></p>
+        </footer>
     </script>
 
     <!--build:js js/main.min.js -->

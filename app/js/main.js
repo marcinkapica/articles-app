@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   var button = $('#button');
-  var list = $('#list');
+  var articlesWrapper = $('#articles-wrapper');
   var loader = $('#loader');
   var errorInfo = $('#error-info');
   var loadingTime = 3000;
@@ -28,25 +28,25 @@ $(document).ready(function() {
     errorInfo.html(errorTemplate(context));
     loader.hide();
     errorInfo.fadeIn();
-    button.html('Load the posts');
+    button.html('Load the articles');
     button.removeClass('button-downward');
   }
 
   function showList(data) {
-    var itemTemplate = Handlebars.compile($('#list-item-template').html());
+    var articlesTemplate = Handlebars.compile($('#articles-template').html());
 
     errorInfo.hide();
     loader.hide();
     button.hide();
-    list.html(itemTemplate(data));
-    list.fadeIn();
+    articlesWrapper.html(articlesTemplate(data));
+    articlesWrapper.fadeIn();
   }
 
   Handlebars.registerHelper('parseDate', function(date) {
     return moment(date).format('DD.MM.YYYY');
   });
 
-  list.hide();
+  articlesWrapper.hide();
   errorInfo.hide();
 
   button.on('click', function() {
