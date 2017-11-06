@@ -2,6 +2,8 @@
 
 Small web application which loads and displays the list of latest articles from National Geographic website using NewsAPI.
 
+[DEMO](https://dist-snhuuamfiv.now.sh/)
+
 ## Installation and launching
 
 ### 1. Installing npm packages
