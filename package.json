@@ -18,7 +18,7 @@
     "del": "^3.0.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-cleanhtml": "^1.0.3",
     "gulp-eslint": "^4.0.0",
     "gulp-imagemin": "^3.4.0",
